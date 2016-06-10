@@ -9,6 +9,12 @@ Supports the following features out of the box:
 - React
 - a11y
 
+with following changes to the base config:
+
+- __DEV__ is a valid underscore-dangle value
+- Double quotes are preferred over single quotes
+- 2 spaces instead of 4
+
 ## Installation
 
 Install with `npm`:
