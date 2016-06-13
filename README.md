@@ -11,7 +11,7 @@ Supports the following features out of the box:
 
 with following changes to the base config:
 
-- __DEV__ is a valid underscore-dangle value
+- `__DEV__` is a valid underscore-dangle value
 - Double quotes are preferred over single quotes
 - 2 spaces instead of 4
 
