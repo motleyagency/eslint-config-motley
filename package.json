@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-motley",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Motley Agency's ESLint configuration",
   "main": ".eslintrc.js",
   "scripts": {
