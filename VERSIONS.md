@@ -1,5 +1,9 @@
 # Versions
 
+## 2.0.0.
+
+- Bump dependencies to match `eslint-config-airbnb@10.0.0`
+
 ## 1.0.1.
 - Minor README.md updates
 
