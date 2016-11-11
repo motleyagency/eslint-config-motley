@@ -1,5 +1,10 @@
 # Versions
 
+## 4.0.1
+
+- New dependencies
+- Added `.js` as valid `react/jsx-filename-extension`.
+
 ## 4.0.0
 
 - Dependency bump to `eslint-config-airbnb@12.0.0`
