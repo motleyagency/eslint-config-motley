@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/motleyagency/eslint-config-motley#readme",
   "dependencies": {
-    "eslint": "^3.9.0",
+    "eslint": "^3.10.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.1",
