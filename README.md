@@ -17,10 +17,24 @@ with following changes to the base config:
 
 ## Installation
 
-Install with `npm`:
+Install with `npm` (or `yarn`:
 
 ``` bash
-npm install -g eslint-config-motley
+npm install eslint-config-motley
+
+# or
+
+yarn add eslint-config-motley
+```
+
+run the installation script
+
+```
+npm run motley-eslint-init
+
+# or
+
+yarn run motley-eslint-init
 ```
 
 and add it to your projects `.eslintrc.js`:

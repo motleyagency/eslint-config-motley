@@ -1,5 +1,9 @@
 # Versions
 
+## 6.0.0
+
+- Due to composition issues, use an installation script. See `README.md` for more information.
+
 ## 5.0.0
 
 - Due to composition issues, we can't use Greenkeeper. Syncing with `airbnb` config instead manually.
