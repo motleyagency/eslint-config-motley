@@ -1,5 +1,9 @@
 # Versions
 
+## 6.0.1
+
+- README.md update
+
 ## 6.0.0
 
 - Due to composition issues, use an installation script. See `README.md` for more information.

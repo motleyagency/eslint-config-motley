@@ -27,7 +27,17 @@ npm install eslint-config-motley
 yarn add eslint-config-motley
 ```
 
-run the installation script
+Then add the installation script to your `package.json`:
+
+```
+{
+  "scripts": {
+    "motley-eslint-init": "motley-eslint-init"
+  }
+}
+```
+
+and run it:
 
 ```
 npm run motley-eslint-init
@@ -37,7 +47,7 @@ npm run motley-eslint-init
 yarn run motley-eslint-init
 ```
 
-and add it to your projects `.eslintrc.js`:
+Then add it to your projects `.eslintrc.js`:
 
 ``` javascript
 module.exports = {
