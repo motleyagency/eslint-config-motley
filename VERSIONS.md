@@ -1,5 +1,9 @@
 # Versions
 
+## 5.0.0
+
+- Due to composition issues, we can't use Greenkeeper. Syncing with `airbnb` config instead manually.
+
 ## 4.0.1
 
 - New dependencies

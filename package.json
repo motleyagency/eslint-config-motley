@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-motley",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "Motley Agency's ESLint configuration",
   "main": ".eslintrc.js",
   "scripts": {
@@ -22,11 +22,11 @@
   },
   "homepage": "https://github.com/motleyagency/eslint-config-motley#readme",
   "dependencies": {
-    "eslint": "^3.9.0",
+    "eslint": "^3.12.1",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.1",
-    "eslint-plugin-react": "^6.6.0"
+    "eslint-plugin-react": "^6.8.0",
   },
   "devDependencies": {}
 }
