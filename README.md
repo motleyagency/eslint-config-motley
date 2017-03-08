@@ -32,7 +32,8 @@ Then add the installation script to your `package.json`:
 ```
 {
   "scripts": {
-    "motley-eslint-init": "motley-eslint-init"
+    "motley-eslint-init": "motley-eslint-init",
+    "eslint": "eslint"
   }
 }
 ```
@@ -59,5 +60,15 @@ module.exports = {
 You can now run eslint locally using `eslint-config-motley`.
 
 ``` bash
+# yarn
+
+yarn run eslint
+
+# npm
+
+npm run eslint
+
+# raw bash
+
 ./node_modules/.bin/eslint path/to/js/src/
 ```
