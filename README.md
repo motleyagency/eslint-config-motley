@@ -54,3 +54,10 @@ module.exports = {
   "extends": "motley",
 }
 ```
+## Run eslint
+
+You can now run eslint locally using `eslint-config-motley`.
+
+``` bash
+./node_modules/.bin/eslint path/to/js/src/
+```
