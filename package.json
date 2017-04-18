@@ -4,8 +4,7 @@
   "description": "Motley Agency's ESLint configuration",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./bin/motley-eslint-init.sh"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin" : {
     "motley-eslint-init" : "./bin/motley-eslint-init.sh"
