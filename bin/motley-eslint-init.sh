@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PKG=eslint-config-airbnb
 
 # Default to installing using npm
@@ -9,4 +11,4 @@ then
   INSTALL="yarn add --dev"
 fi
 
-npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs $INSTALL "$PKG@latest"
+npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs "$INSTALL" "$PKG@latest"
