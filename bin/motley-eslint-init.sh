@@ -4,7 +4,8 @@ PKG=eslint-config-airbnb
 INSTALL="npm install --save-dev";
 
 # Is this a yarn project, then install using yarn
-if [[ -f $(PWD)/yarn.lock ]]
+YARN_BIN=$(which yarn)
+if [[ -f $(PWD)/yarn.lock -a -x "$YARN_BIN" ]]
 then
   INSTALL="yarn add --dev"
 fi
