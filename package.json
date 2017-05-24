@@ -35,7 +35,7 @@
   "author": "Pete Nykänen <pete.a.nykanen@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/motleyagency/motley-styleguide/issues"
+    "url": "https://github.com/motleyagency/eslint-config-motley/issues"
   },
-  "homepage": "https://github.com/motleyagency/motley-styleguide/#readme"
+  "homepage": "https://github.com/motleyagency/eslint-config-motley/#readme"
 }
