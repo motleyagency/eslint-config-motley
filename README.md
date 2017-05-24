@@ -25,6 +25,14 @@ Run the following command:
   export PKG=eslint-config-motley
   npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
 )
+
+# or with yarn
+
+(
+  export PKG=eslint-config-motley
+  npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs yarn add --dev "$PKG@latest"
+)
+
 ```
 
 Windows users can use [`install-peerdeps`](https://github.com/nathanhleung/install-peerdeps) tool:
