@@ -1,13 +1,10 @@
 {
   "name": "eslint-config-motley",
-  "version": "6.1.0",
-  "description": "Motley Agency's ESLint configuration",
+  "version": "7.0.0",
+  "description": "Motley's JavaScript styleguide using `eslint` and `prettier`",
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin" : {
-    "motley-eslint-init" : "./bin/motley-eslint-init.sh"
   },
   "repository": {
     "type": "git",
@@ -18,10 +15,21 @@
     "config",
     "motley"
   ],
+  "peerDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-config-prettier": "2.1.1",
+    "eslint-plugin-react": "^7.0.1",
+    "lint-staged": "^3.4.2",
+    "husky": "^0.13.3"
+  },
   "author": "Pete Nykänen <pete.a.nykanen@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/motleyagency/eslint-config-motley/issues"
+    "url": "https://github.com/motleyagency/motley-styleguide/issues"
   },
-  "homepage": "https://github.com/motleyagency/eslint-config-motley#readme"
+  "homepage": "https://github.com/motleyagency/motley-styleguide/#readme"
 }
