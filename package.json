@@ -31,7 +31,7 @@
     "eslint-plugin-react": "^7.0.1",
     "husky": "^0.13.3",
     "lint-staged": "^3.4.2",
-    "prettier": "^1.3.1",
+    "prettier": "^1.3.1"
   },
   "author": "Pete Nykänen <pete.a.nykanen@gmail.com>",
   "license": "MIT",
