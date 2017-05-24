@@ -1,6 +1,6 @@
 # eslint-config-motley
 
-[Motley's](motley.fi) JavaScript styleguide, using `eslint` and `prettier`.
+[Motley's](motley.fi) JavaScript styleguide, using `eslint` and `prettier` with zero configuration.
 Based on `eslint-config-airbnb`.
 
 Supports the following features out of the box:
@@ -22,18 +22,8 @@ Run the following command:
 
 ``` bash
 (
-  PKG=eslint-config-motley
-
-  # Default to installing using npm
-  INSTALL="npm install --save-dev"
-
-  # Is this a yarn project and yarn is found in PATH, then install using yarn
-  if [[ -f $(PWD)/yarn.lock && -x $(which yarn) ]]
-  then
-    INSTALL="yarn add --dev"
-  fi
-
-  npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs $INSTALL
+  export PKG=eslint-config-motley
+  npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
 )
 ```
 
