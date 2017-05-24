@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=eslint-config-airbnb
+PKG=eslint-config-motley
 
 # Default to installing using npm
 INSTALL="npm install --save-dev"
@@ -11,4 +11,4 @@ then
   INSTALL="yarn add --dev"
 fi
 
-npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs $INSTALL "$PKG@latest"
+npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs $INSTALL
