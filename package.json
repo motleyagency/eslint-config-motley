@@ -1,10 +1,9 @@
 {
   "name": "eslint-config-motley",
-  "version": "7.0.1-rc1",
+  "version": "7.0.1-rc2",
   "description": "Motley's JavaScript styleguide using `eslint` and `prettier`",
   "main": ".eslintrc.js",
   "scripts": {
-    "preinstall": "lib/preinstall.sh",
     "postinstall": "lib/postinstall.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
