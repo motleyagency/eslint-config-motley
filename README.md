@@ -6,13 +6,12 @@ Based on `eslint-config-airbnb`.
 Supports the following features out of the box:
 
 - Prettier autoformatting on precommit stage via `husky`.
-- ES2015
+- ES2015+
 - Imports and exports
 - React
 - a11y
 - `__DEV__` is a valid underscore-dangle value
-
-with following changes to the base config:
+- `js` is a valid filename for `JSX` files
 
 ## Installation
 
@@ -39,7 +38,7 @@ Windows users can use [`install-peerdeps`](https://github.com/nathanhleung/insta
 
 ``` bash
 npm install -g install-peerdeps
-install-peerdeps --dev eslint-config-airbnb
+install-peerdeps --dev eslint-config-motley
 ```
 
 If all went well, you should see the following in your `.eslintrc.js`:
@@ -65,3 +64,12 @@ and the following in your `package.json`:
   }
 }
 ```
+
+## Acknowledgements
+
+We would like to thank the creators, maintainers and contributors of following libraries for making this possible:
+
+[`eslint-config-airbnb`](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) for being the base and providing a handy way to install `peerDependencies` from a package.
+[`prettier`](https://github.com/prettier/prettier) for being :dark_sunglasses: and providing [a way to disable some eslint configurations from above](https://github.com/prettier/eslint-config-prettier)
+[`husky`](https://github.com/typicode/husky) and [`lint-staged`](https://github.com/okonet/lint-staged) for making precommit hooks easy
+
