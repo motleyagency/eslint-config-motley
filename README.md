@@ -58,7 +58,7 @@ and the following in your `package.json`:
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
+      "prettier --single-quote --trailing-comma all --write",
       "git add"
     ]
   }
