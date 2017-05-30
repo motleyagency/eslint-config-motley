@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-motley",
-  "version": "7.0.2",
+  "version": "7.1.0",
   "description": "Motley's JavaScript styleguide using `eslint` and `prettier`",
   "main": ".eslintrc.js",
   "scripts": {
