@@ -15,7 +15,7 @@ Supports the following features out of the box:
 
 ## Installation
 
-> Note that currently the script will override your `.eslintrc.js` file and override your `precommit` and `lint-staged` scripts in `package.json` if there's one.
+> Note that currently the script will override your `precommit` and `lint-staged` scripts in `package.json` if there's one.
 
 Run the following command:
 

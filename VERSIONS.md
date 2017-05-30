@@ -1,5 +1,18 @@
 # Versions
 
+## 7.1.0
+
+- Add `env` parameters to `.eslintrc.js` template (#36)
+- Only update `.eslintrc.js` if it doesn't exists, otherwise it returns a warning (#37)
+
+## 7.0.1 - 7.0.2
+
+- Dummy releases for 7.0.0 because of version conflicts in `npm`, whoops.
+
+## 7.0.0
+
+- New version with Prettier, Husky and automatic installation process
+
 ## 6.0.1
 
 - README.md update
