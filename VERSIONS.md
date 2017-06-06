@@ -1,5 +1,9 @@
 # Versions
 
+## 7.1.1
+
+- Remove unneccesary "indent" option from `.eslintrc.js`
+
 ## 7.1.0
 
 - Add `env` parameters to `.eslintrc.js` template (#36)
