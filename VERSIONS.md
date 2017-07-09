@@ -1,4 +1,7 @@
 # Versions
+## 7.2.0
+
+- Update `prettier` dependency
 
 ## 7.1.1
 
