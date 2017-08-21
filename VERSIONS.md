@@ -1,7 +1,7 @@
 # Versions
 ## 7.3.0
 
-- Add `curly` rule disabled by [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier#curly)
+- Add `curly` rule disabled by [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier#curly) (#42)
 
 ## 7.2.0
 
