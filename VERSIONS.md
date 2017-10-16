@@ -1,4 +1,9 @@
 # Versions
+## 8.0.0
+
+- Upgrade peer dependencies (e.g. eslint v4)
+- Probably nothing braking, but major version bump just to make sure
+
 ## 7.3.0
 
 - Add `curly` rule disabled by [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier#curly) (#42)
