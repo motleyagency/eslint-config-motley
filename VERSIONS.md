@@ -1,5 +1,11 @@
 # Versions
-## 8.0.0
+## 9.0.0
+
+- Update all the deps
+- Now supports other files than `.js` too, like `JSON`, `GraphQL`, `CSS/LESS/SCSS` and TypeScript!
+- New install instructions
+
+## 8.0.1
 
 - Upgrade peer dependencies (e.g. eslint v4)
 - Probably nothing braking, but major version bump just to make sure

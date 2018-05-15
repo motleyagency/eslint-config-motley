@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-motley",
-  "version": "8.0.1",
+  "version": "9.0.0",
   "description": "Motley's JavaScript styleguide using `eslint` and `prettier`",
   "main": ".eslintrc.js",
   "scripts": {
@@ -21,16 +21,16 @@
     "lint-staged"
   ],
   "peerDependencies": {
-    "eslint": "^4.9.0",
-    "eslint-config-airbnb": "^16.0.0",
-    "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.0",
-    "eslint-plugin-react": "^7.4.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "husky": "^0.14.3",
-    "lint-staged": "^4.2.0",
-    "prettier": "^1.7.0"
+    "lint-staged": "^7.1.0",
+    "prettier": "^1.12.1"
   },
   "author": "Pete Nykänen <pete.a.nykanen@gmail.com>",
   "license": "MIT",

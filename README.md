@@ -20,25 +20,7 @@ Supports the following features out of the box:
 Run the following command:
 
 ``` bash
-(
-  export PKG=eslint-config-motley
-  npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
-)
-
-# or with yarn
-
-(
-  export PKG=eslint-config-motley
-  npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs yarn add --dev "$PKG@latest"
-)
-
-```
-
-Windows users can use [`install-peerdeps`](https://github.com/nathanhleung/install-peerdeps) tool:
-
-``` bash
-npm install -g install-peerdeps
-install-peerdeps --dev eslint-config-motley
+npx install-peerdeps --dev eslint-config-motley
 ```
 
 If all went well, you should see the following in your `.eslintrc.js`:
@@ -57,7 +39,7 @@ and the following in your `package.json`:
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,json,graphql,md,css,scss,less,ts}": [
       "prettier --single-quote --trailing-comma all --write",
       "git add"
     ]
@@ -72,4 +54,3 @@ We would like to thank the creators, maintainers and contributors of following l
 - [`eslint-config-airbnb`](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) for being the base and providing a handy way to install `peerDependencies` from a package.
 - [`prettier`](https://github.com/prettier/prettier) for being :dark_sunglasses: and providing [a way to disable some eslint configurations from above](https://github.com/prettier/eslint-config-prettier)
 - [`husky`](https://github.com/typicode/husky) and [`lint-staged`](https://github.com/okonet/lint-staged) for making precommit hooks easy
-
