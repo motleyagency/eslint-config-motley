@@ -1,4 +1,9 @@
 # Versions
+
+## 9.1.0
+
+- Use .prettierrc instead of inline options in package.json
+
 ## 9.0.0
 
 - Update all the deps
