@@ -31,6 +31,15 @@ module.exports = {
 }
 ```
 
+and the following in your `.prettierrc`;
+
+``` json
+{
+  "singleQuote": true,
+  "trailingComma": "all"
+}
+```
+
 and the following in your `package.json`:
 
 ``` json
@@ -40,7 +49,7 @@ and the following in your `package.json`:
   },
   "lint-staged": {
     "*.{js,json,graphql,md,css,scss,less,ts}": [
-      "prettier --single-quote --trailing-comma all --write",
+      "prettier --write",
       "git add"
     ]
   }
