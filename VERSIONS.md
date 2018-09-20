@@ -1,5 +1,9 @@
 # Versions
 
+## 9.1.1
+
+- Fix indentation in .prettierrc
+
 ## 9.1.0
 
 - Use .prettierrc instead of inline options in package.json
