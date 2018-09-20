@@ -1,5 +1,10 @@
 # Versions
 
+## 9.2.0
+
+- Fix indentation in .prettierrc
+- Don't overwrite existing `lint-staged` configuration in `package.json`
+
 ## 9.1.0
 
 - Use .prettierrc instead of inline options in package.json
@@ -74,7 +79,9 @@
 - Minor README.md updates
 
 ## 1.0.1
+
 - Added new rules for allowed underscore dangles (`__DEV__`), changed indent to two spaces, changed from single spaces to double
 
 ## 1.0.0
+
 - Initial version
