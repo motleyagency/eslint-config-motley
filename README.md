@@ -44,8 +44,10 @@ and the following in your `package.json`:
 
 ``` json
 {
-  "scripts": {
-    "precommit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,json,graphql,md,css,scss,less,ts}": [
