@@ -1,5 +1,10 @@
 # Versions
 
+## 10.0.0
+
+- Update deps
+- BREAKING: `husky` now looks for `pre-commit` script instead of `precommit`
+
 ## 9.2.0
 
 - Fix indentation in .prettierrc
