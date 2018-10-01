@@ -1,5 +1,9 @@
 # Versions
 
+## 10.0.1
+
+- It actually looks for `husky.hooks.precommit`
+
 ## 10.0.0
 
 - Update deps
