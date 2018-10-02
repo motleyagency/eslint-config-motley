@@ -13,27 +13,27 @@ Supports the following features out of the box:
 - `__DEV__` is a valid underscore-dangle value
 - `js` is a valid filename for `JSX` files
 
-## Installation
+**Note**: Support for Node 6 dropped since version 10. Old projects should install `eslint-config-motley@^9`.
 
-> Note that currently the script will override your `precommit` and `lint-staged` scripts in `package.json` if there's one.
+## Installation
 
 Run the following command:
 
-``` bash
+```bash
 npx install-peerdeps --dev eslint-config-motley
 ```
 
 If all went well, you should see the following in your `.eslintrc.js`:
 
-``` js
+```js
 module.exports = {
-  extends: "motley",
-}
+  extends: 'motley',
+};
 ```
 
 and the following in your `.prettierrc`;
 
-``` json
+```json
 {
   "singleQuote": true,
   "trailingComma": "all"
@@ -42,7 +42,7 @@ and the following in your `.prettierrc`;
 
 and the following in your `package.json`:
 
-``` json
+```json
 {
   "husky": {
     "hooks": {
@@ -50,10 +50,7 @@ and the following in your `package.json`:
     }
   },
   "lint-staged": {
-    "*.{js,json,graphql,md,css,scss,less,ts}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,json,graphql,md,css,scss,less,ts}": ["prettier --write", "git add"]
   }
 }
 ```
