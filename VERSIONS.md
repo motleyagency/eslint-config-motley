@@ -1,5 +1,13 @@
 # Versions
 
+## 10.0.2
+
+- Fix bug with promises
+- Change callback functions to promisified versions
+- Facilitate local development with `npm link`
+- Add newline to end of `.prettierrc`
+- Fail fast if package.json doesn't exist
+
 ## 10.0.1
 
 - It actually looks for `husky.hooks.precommit`
