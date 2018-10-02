@@ -3,6 +3,7 @@
 ## 10.0.2
 
 - Fix bug with promises
+- Change callback functions to promisified versions
 - Facilitate local development with `npm link`
 - Add newline to end of `.prettierrc`
 
