@@ -1,5 +1,9 @@
 # Versions
 
+## 10.1.0
+
+- Upgrade lint-staged to ^8.0.0 to support partially staged files
+
 ## 10.0.2
 
 - Fix bug with promises
