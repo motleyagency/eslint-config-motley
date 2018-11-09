@@ -1,6 +1,6 @@
 # Versions
 
-## 10.1.0
+## 11.0.0
 
 - Upgrade lint-staged to ^8.0.0 to support partially staged files
 
