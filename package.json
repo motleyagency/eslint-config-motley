@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-motley",
-  "version": "10.0.2",
+  "version": "11.0.0",
   "description": "Motley's JavaScript styleguide using `eslint` and `prettier`",
   "main": ".eslintrc.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.1.0",
     "husky": "^1.0.1",
-    "lint-staged": "^7.3.0",
+    "lint-staged": "^8.0.0",
     "prettier": "^1.14.3"
   },
   "author": "Pete Nykänen <pete.a.nykanen@gmail.com>",
