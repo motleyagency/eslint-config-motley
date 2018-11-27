@@ -67,7 +67,7 @@ npm install --save-dev babel-eslint
 yarn add babel-eslint -D
 ```
 
-```json
+```js
 module.exports = {
   extends: 'motley',
   parser: 'babel-eslint',
