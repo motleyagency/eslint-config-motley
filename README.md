@@ -55,6 +55,25 @@ and the following in your `package.json`:
 }
 ```
 
+## Using experimental features
+
+If you are using experimental features such as class fields you should install `babel-eslint` and add it as a parser to your `.eslintrc.js`:
+
+```bash
+npm install --save-dev babel-eslint
+
+# or
+
+yarn add babel-eslint -D
+```
+
+```json
+module.exports = {
+  extends: 'motley',
+  parser: 'babel-eslint',
+};
+```
+
 ## Acknowledgements
 
 We would like to thank the creators, maintainers and contributors of following libraries for making this possible:
