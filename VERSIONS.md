@@ -1,5 +1,9 @@
 # Versions
 
+## 11.1.0
+
+- Added new plugin eslint-plugin-react-hooks
+
 ## 11.0.0
 
 - Upgrade lint-staged to ^8.0.0 to support partially staged files
