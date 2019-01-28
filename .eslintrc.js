@@ -3,8 +3,6 @@ module.exports = {
     "airbnb",
     "prettier",
     "prettier/react",
-  ],
-  "plugins": [
     "react-hooks",
   ],
   "rules": {
