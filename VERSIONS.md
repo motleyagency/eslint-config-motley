@@ -1,6 +1,6 @@
 # Versions
 
-## 11.0.1
+## 11.1.0
 
 - Added new plugin eslint-plugin-react-hooks
 
