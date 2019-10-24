@@ -10,6 +10,7 @@ Supports the following features out of the box:
 - Imports and exports
 - React
 - a11y
+- Full TypeScript support
 - `__DEV__` is a valid underscore-dangle value
 - `js` is a valid filename for `JSX` files
 
