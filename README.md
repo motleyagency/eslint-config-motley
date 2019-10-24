@@ -12,7 +12,7 @@ Supports the following features out of the box:
 - a11y
 - Full TypeScript support
 - `__DEV__` is a valid underscore-dangle value
-- `js` is a valid filename for `JSX` files
+- `js` is a valid filename for `JSX` files (in JavaScript)
 
 **Note**: Support for Node 6 dropped since version 10. Old projects should install `eslint-config-motley@^9`.
 
@@ -58,7 +58,7 @@ and the following in your `package.json`:
 
 ## Using experimental features
 
-If you are using experimental features such as class fields you should install `babel-eslint` and add it as a parser to your `.eslintrc.js`:
+If you are using experimental features such as class fields with JavaScript files you should install `babel-eslint` and add it as a parser to your `.eslintrc.js`:
 
 ```bash
 npm install --save-dev babel-eslint
