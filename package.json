@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-motley",
-  "version": "12.0.0-alpha.3",
+  "version": "12.0.0-alpha.4",
   "description": "Motley's JavaScript styleguide using `eslint` and `prettier`",
   "main": ".eslintrc.js",
   "scripts": {
@@ -27,7 +27,6 @@
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-motley": "10.0.2",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.1.1",
