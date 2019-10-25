@@ -5,19 +5,19 @@ const base = {
     jest: true,
   },
   extends: [
-    "airbnb",
-    "prettier",
-    "prettier/react",
+    'airbnb',
+    'prettier',
+    'prettier/react',
   ],
   plugins: [
-    "react-hooks",
+    'react-hooks',
   ],
   rules: {
-    "no-underscore-dangle": ["error", { "allow": ["__DEV__"] }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "curly": ["error", "all"],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    'no-underscore-dangle': ['error', { 'allow': ['__DEV__'] }],
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
+    'curly': ['error', 'all'],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn'
   },
 }
 
@@ -36,7 +36,8 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint'],
       rules: {
-        "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+        'react/jsx-filename-extension': [1, { 'extensions': ['.tsx'] }],
+        'react/prop-types': 0
       },
     },
   ]
