@@ -1,5 +1,10 @@
 # Versions
 
+## 12.0.0
+
+- Updated dependencies
+- Added TypeScript support 
+
 ## 11.1.1
 
 - Updated eslint version to ^5.6.0
