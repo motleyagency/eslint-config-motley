@@ -24,6 +24,11 @@ Run the following command:
 npx install-peerdeps --dev eslint-config-motley
 ```
 
+If you get prompted that do you want to use Yarn and nothing gets installed after that try following command:
+```bash
+npx install-peerdeps --dev eslint-config-motley --yarn
+```
+
 If all went well, you should see the following in your `.eslintrc.js`:
 
 ```js
