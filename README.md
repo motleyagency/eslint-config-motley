@@ -10,13 +10,15 @@ Supports the following features out of the box:
 - Imports and exports
 - React
 - a11y
-- Full TypeScript support
+- Full TypeScript support via the `-typescript` package
 - `__DEV__` is a valid underscore-dangle value
 - `js` is a valid filename for `JSX` files (in JavaScript)
 
 **Note**: Support for Node 6 dropped since version 10. Old projects should install `eslint-config-motley@^9`.
 
 ## Installation
+
+### JavaScript
 
 Run the following command:
 
@@ -37,7 +39,30 @@ module.exports = {
 };
 ```
 
-and the following in your `.prettierrc`;
+### TypeScript
+
+Run the following command:
+
+```bash
+npx install-peerdeps --dev eslint-config-motley-typescript
+```
+
+If you get prompted that do you want to use Yarn and nothing gets installed after that try following command:
+```bash
+npx install-peerdeps --dev eslint-config-motley-typescript --yarn
+```
+
+If all went well, you should see the following in your `.eslintrc.js`:
+
+```js
+module.exports = {
+  extends: 'motley-typescript',
+};
+```
+
+### Post-install:
+
+You should have the following set in `.prettierrc`;
 
 ```json
 {
@@ -61,7 +86,7 @@ and the following in your `package.json`:
 }
 ```
 
-## Using experimental features
+## Using experimental features with JavaScript
 
 If you are using experimental features such as class fields with JavaScript files you should install `babel-eslint` and add it as a parser to your `.eslintrc.js`:
 
