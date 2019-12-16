@@ -10,21 +10,21 @@ const readFileAsync = promisify(fs.readFile);
 // get the path to the host project.
 // process.env.PWD doesn't resolve symlinks, e.g. when developing using npm link
 const projectPath = path.resolve(process.env.PWD, '..', '..');
-console.log('Configuring eslint-config-motley for ', projectPath, '\n');
+const isTypeScript = fs.existsSync(path.resolve(process.env.PWD, '..', 'eslint-config-motley-typescript'));
+console.log(`Configuring eslint-config-motley${isTypeScript ? '-typescript': ''}`, projectPath, '\n');
 
 /**
  * Updates package.json if there's no existing config. Warns if there is.
  */
 const writeToPackageJson = async () => {
   const packageJsonPath = path.join(projectPath, 'package.json');
-
+  
   const content = await readFileAsync(packageJsonPath, 'utf-8').catch(err => {
     console.log('🤔  package.json not found, have you run `npm init`?');
     return Promise.reject(err);
   });
-
+  
   const packageJson = JSON.parse(content);
-
   // Husky upgrade from 0.14.0 to ^1
   // Remove old scripts.precommit
   if ((packageJson.scripts || {}).precommit === 'lint-staged') {
@@ -42,7 +42,7 @@ const writeToPackageJson = async () => {
 
   // Default configuration for lint-staged
   const lintStaged = {
-    '*.{js,json,graphql,md,css,scss,less,ts}': ['prettier --write', 'git add'],
+    '*.{js,json,graphql,md,css,scss,less,ts,tsx}': ['prettier --write', 'git add'],
   };
 
   // Set or update lint-staged configuration
@@ -59,7 +59,7 @@ ${JSON.stringify(lintStaged, null, 2)}\n`);
   // Stringify package.json and write to file
   const jsonString = JSON.stringify(packageJson, null, 2);
 
-  return writeFileAsync(packageJsonPath, jsonString, 'utf-8');
+  await writeFileAsync(packageJsonPath, jsonString, 'utf-8');
 };
 
 /**
@@ -68,18 +68,13 @@ ${JSON.stringify(lintStaged, null, 2)}\n`);
 const writeEslintRc = () => {
   const eslintPath = path.join(projectPath, '.eslintrc.js');
   const content = `module.exports = {
-  extends: 'motley',
-  env: {
-    browser: true,
-    node: true,
-    jest: true,
-  }
+  extends: ${isTypeScript ? "'motley-typescript'" : "'motley'"},
 };
 `;
 
   if (fs.existsSync(eslintPath)) {
     console.warn(`⚠️  .eslintrc.js already exists;
-Make sure that it includes the following for 'eslint-config-motley'
+Make sure that it includes the following for 'eslint-config-motley${isTypeScript ? '-typescript' : ''}'
 to work as it should:
 
 ${content}`);
@@ -102,7 +97,7 @@ const writePrettierRc = () => {
 
   if (fs.existsSync(prettierPath)) {
     console.warn(`⚠️  .prettierrc already exists;
-Make sure that it includes the following for 'eslint-config-motley'
+Make sure that it includes the following for  'eslint-config-motley${isTypeScript ? '-typescript' : ''}'
 to work as it should:
 
 ${JSON.stringify(content, null, 2)}\n`);
@@ -117,15 +112,15 @@ ${JSON.stringify(content, null, 2)}\n`);
   );
 };
 
-writeToPackageJson()
-  .then(() => Promise.all([writeEslintRc(), writePrettierRc()]))
-  .then(() => {
-    console.log('😎  motley-styleguide was configured');
+(async () => {
+  try {
+    await writeToPackageJson();
+    await Promise.all([writeEslintRc(), writePrettierRc()]);
+    console.log('😎  Everything went well, have fun!');
     process.exit();
-  })
-  .catch(err => {
+  } catch (err) {
     console.log('😬  something went wrong:');
     console.error(err.message);
-
     process.exit(1);
-  });
+  }
+})();

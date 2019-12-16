@@ -1,5 +1,11 @@
 # Versions
 
+## 12.0.0
+
+- Updated dependencies
+- Added TypeScript support
+- Split the configuration in two different packages, base and `-typescript` variants
+
 ## 11.1.1
 
 - Updated eslint version to ^5.6.0
