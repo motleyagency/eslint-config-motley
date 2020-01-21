@@ -1,5 +1,8 @@
 # Versions
 
+## 12.0.1
+- Added rule configuration which handles missing file extension errors better with TypeScript
+
 ## 12.0.0
 
 - Updated dependencies
