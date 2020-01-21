@@ -20,8 +20,7 @@ module.exports = {
         "js": "never",
         "jsx": "never",
         "ts": "never",
-        "tsx": "never",
-        "mjs": "never"
+        "tsx": "never"
       }
     ],
   },
