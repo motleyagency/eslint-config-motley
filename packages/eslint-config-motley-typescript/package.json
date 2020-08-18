@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-motley-typescript",
-  "version": "13.0.0-alpha",
+  "version": "13.0.0",
   "description": "Motley's TypeScript styleguide using `@typescript-eslint` and `prettier`",
   "main": ".eslintrc.js",
   "scripts": {
