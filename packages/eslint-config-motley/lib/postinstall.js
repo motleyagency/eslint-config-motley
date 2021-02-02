@@ -9,7 +9,7 @@ const readFileAsync = promisify(fs.readFile);
 
 // get the path to the host project.
 const projectPath = path.resolve(process.cwd(), '..', '..');
-const isTypeScript = fs.existsSync(path.resolve(process.env.PWD, '..', 'eslint-config-motley-typescript'));
+const isTypeScript = fs.existsSync(path.resolve(process.cwd(), '..', 'eslint-config-motley-typescript'));
 console.log(`Configuring eslint-config-motley${isTypeScript ? '-typescript': ''}`, projectPath, '\n');
 
 /**
