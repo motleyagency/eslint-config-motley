@@ -8,8 +8,7 @@ const writeFileAsync = promisify(fs.writeFile);
 const readFileAsync = promisify(fs.readFile);
 
 // get the path to the host project.
-// process.env.PWD doesn't resolve symlinks, e.g. when developing using npm link
-const projectPath = path.resolve(process.env.PWD, '..', '..');
+const projectPath = path.resolve(process.cwd(), '..', '..');
 const isTypeScript = fs.existsSync(path.resolve(process.env.PWD, '..', 'eslint-config-motley-typescript'));
 console.log(`Configuring eslint-config-motley${isTypeScript ? '-typescript': ''}`, projectPath, '\n');
 
