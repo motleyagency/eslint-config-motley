@@ -1,6 +1,6 @@
 # Versions
 
-## 13.0.1
+## 13.1.0
 
 - Fix Windows compatibility for postinstall scripts.
 
