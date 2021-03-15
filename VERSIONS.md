@@ -1,5 +1,9 @@
 # Versions
 
+## 14.0.0-alpha
+
+- Updated dependencies
+
 ## 13.1.0
 
 - Fix Windows compatibility for postinstall scripts.
