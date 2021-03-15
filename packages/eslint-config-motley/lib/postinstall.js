@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { promisify } = require('util');
 
+const mkdirAsync = promisify(fs.mkdir);
 const writeFileAsync = promisify(fs.writeFile);
 const readFileAsync = promisify(fs.readFile);
 
@@ -17,12 +18,12 @@ console.log(`Configuring eslint-config-motley${isTypeScript ? '-typescript': ''}
  */
 const writeToPackageJson = async () => {
   const packageJsonPath = path.join(projectPath, 'package.json');
-  
+
   const content = await readFileAsync(packageJsonPath, 'utf-8').catch(err => {
     console.log('🤔  package.json not found, have you run `npm init`?');
     return Promise.reject(err);
   });
-  
+
   const packageJson = JSON.parse(content);
   // Husky upgrade from 0.14.0 to ^1
   // Remove old scripts.precommit
@@ -30,14 +31,16 @@ const writeToPackageJson = async () => {
     delete packageJson.scripts.precommit;
   }
 
-  // Set new husky hook
-  if (!packageJson.husky) {
-    packageJson.husky = {};
+  // Husky upgrade from 4 to 5, remove old package.json config
+  if (packageJson.husky) {
+    if (JSON.stringify(packageJson.husky) === '{"hooks":{"pre-commit":"lint-staged"}}') {
+      delete packageJson.husky;
+    } else {
+      console.warn(`⚠️  A custom 'husky' configuration exists in package.json.
+We won't overwrite it since it may include some of your own customizations.
+Please see the husky documentation for migrating to husky v5 and act accordingly.`);
+    }
   }
-  if (!packageJson.husky.hooks) {
-    packageJson.husky.hooks = {};
-  }
-  packageJson.husky.hooks['pre-commit'] = 'lint-staged';
 
   // Default configuration for lint-staged
   const lintStaged = {
@@ -60,6 +63,28 @@ ${JSON.stringify(lintStaged, null, 2)}\n`);
 
   await writeFileAsync(packageJsonPath, jsonString, 'utf-8');
 };
+
+const writeHuskyPreCommit = async () => {
+  const dotHuskyPath = path.join(projectPath, '.husky');
+  const preCommitPath = path.join(dotHuskyPath, 'pre-commit');
+  const content = `yarn lint-staged`;
+
+  if (!fs.existsSync(dotHuskyPath)) {
+    await mkdirAsync(dotHuskyPath);
+  }
+
+  if (fs.existsSync(preCommitPath)) {
+    console.warn(`⚠️  .husky/pre-commit already exists;
+Make sure that it includes the following for 'eslint-config-motley${isTypeScript ? '-typescript' : ''}'
+to work as it should:
+
+${content}`);
+
+    return Promise.resolve();
+  }
+
+  return writeFileAsync(preCommitPath, content, { encoding: 'utf-8', mode: 0o755 });
+}
 
 /**
  * Writes .eslintrc.js if it doesn't exist. Warns if it exists.
@@ -114,7 +139,7 @@ ${JSON.stringify(content, null, 2)}\n`);
 (async () => {
   try {
     await writeToPackageJson();
-    await Promise.all([writeEslintRc(), writePrettierRc()]);
+    await Promise.all([writeHuskyPreCommit(), writeEslintRc(), writePrettierRc()]);
     console.log('😎  Everything went well, have fun!');
     process.exit();
   } catch (err) {
