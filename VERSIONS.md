@@ -1,6 +1,6 @@
 # Versions
 
-## 14.0.0-alpha
+## 14.0.0
 
 - Updated dependencies
 
