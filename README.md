@@ -86,9 +86,9 @@ and the following in your `package.json`:
 }
 ```
 
-## Using experimental features with JavaScript
+## Using experimental JavaScript features with `eslint-config-motley`
 
-If you are using experimental features such as class fields with JavaScript files you should install `babel-eslint` and add it as a parser to your `.eslintrc.js`:
+If you are using experimental features such as class fields with **JavaScript** files you should install `babel-eslint` and add it as a parser to your `.eslintrc.js`:
 
 ```bash
 npm install --save-dev babel-eslint
@@ -104,6 +104,8 @@ module.exports = {
   parser: 'babel-eslint',
 };
 ```
+
+> **NOTE**: The TypeScript packages automatically uses `@typescript-eslint/parser`
 
 ## Acknowledgements
 
