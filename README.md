@@ -1,6 +1,6 @@
 # eslint-config-motley
 
-[Motley's](motley.fi) JavaScript styleguide, using `eslint` and `prettier` with zero configuration.
+[Motley's](https://www.motley.fi/) JavaScript styleguide, using `eslint` and `prettier` with zero configuration.
 Based on `eslint-config-airbnb`.
 
 Supports the following features out of the box:
