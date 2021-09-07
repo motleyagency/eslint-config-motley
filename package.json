@@ -4,13 +4,16 @@
   "description": "Development and testing tools for eslint-config-motley",
   "main": "index.js",
   "devDependencies": {
+    "jest": "^27.1.0",
     "npm-auth-to-token": "^1.0.0",
     "verdaccio": "^5.1.3",
     "verdaccio-auth-memory": "^10.0.0",
     "verdaccio-memory": "^10.0.0"
   },
   "scripts": {
-    "test": "docker run -it eslint-config-motley-test"
+    "test:local": "docker build . -t eslint-config-motley && docker run eslint-config-motley",
+    "test:ci": "./scripts/publish-to-verdaccio && jest",
+    "test": "jest"
   },
   "repository": {
     "type": "git",

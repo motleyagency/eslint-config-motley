@@ -8,7 +8,10 @@ COPY scripts ./scripts
 COPY package-lock.json package.json ./
 RUN npm ci
 COPY packages ./packages
-COPY fixtures ./fixtures
+COPY __tests__ ./__tests_
+COPY __fixtures__ ./__fixtures__
 
-# Start verdaccio and publish packages locally
+# Start verdaccio and publish packages locally, install deps
 RUN ./scripts/publish-to-verdaccio.sh
+
+ENTRYPOINT ["npm", "test"]

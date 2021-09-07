@@ -21,23 +21,25 @@ cp .npmrc packages/eslint-config-motley-typescript/.npmrc
 # Run npm command
 cd packages/eslint-config-motley && sh -c "npm --registry $local_registry publish"
 cd ../eslint-config-motley-typescript && sh -c "npm --registry $local_registry publish"
-
 cd ../../
 
-cp .npmrc fixtures/js/.npmrc
-cp .npmrc fixtures/ts/.npmrc
+cp .npmrc __fixtures__/js/.npmrc
+cp .npmrc __fixtures__/ts/.npmrc
 
 echo "Installing eslint-config-motley to fixtures/js"
 (
-  cd fixtures/js
+  cd __fixtures__/js
   export PKG=eslint-config-motley;
+  npm install --registry $local_registry --legacy-peer-deps --save-dev "$PKG@latest"
   npm info --registry $local_registry "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --registry https://registry.npmjs.org --save-dev
+  npm install --registry https://registry.npmjs.org react react-dom
 )
 
 echo "Installing eslint-config-motley-typescript to fixtures/ts"
 (
-  cd fixtures/ts
+  cd __fixtures__/ts
   export PKG=eslint-config-motley;
   npm install --registry $local_registry --legacy-peer-deps --save-dev "$PKG@latest"
   npm info --registry $local_registry "$PKG-typescript@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --legacy-peer-deps --registry https://registry.npmjs.org --save-dev
+  npm install --registry https://registry.npmjs.org react react-dom
 )
