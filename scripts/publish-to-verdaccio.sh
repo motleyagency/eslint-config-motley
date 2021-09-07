@@ -7,9 +7,6 @@ local_registry="http://0.0.0.0:4873"
 # start local registry
 tmp_registry_log=`mktemp`
 sh -c "nohup ./node_modules/.bin/verdaccio --config .config/verdaccio/config.yaml &>$tmp_registry_log &"
-# wait for `verdaccio` to boot
-echo "Waiting for verdaccio to start"
-( tail -f $tmp_registry_log & ) | grep -q "http address"
 # login so we can publish packages
 echo "Logging in"
 sh -c "./node_modules/.bin/npm-auth-to-token -u motley -p motley -e it@motley.fi -r $local_registry"
