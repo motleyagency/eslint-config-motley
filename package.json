@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test:local": "docker build . -t eslint-config-motley && docker run eslint-config-motley",
-    "test:ci": "./scripts/publish-to-verdaccio && jest",
+    "test:ci": "./scripts/publish-to-verdaccio.sh && jest",
     "test": "jest"
   },
   "repository": {
