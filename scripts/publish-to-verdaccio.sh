@@ -6,7 +6,7 @@ local_registry="http://0.0.0.0:4873"
 
 # start local registry
 tmp_registry_log=`mktemp`
-sh -c "nohup ./node_modules/.bin/verdaccio --config /app/.config/verdaccio/config.yaml &>$tmp_registry_log &"
+sh -c "nohup ./node_modules/.bin/verdaccio --config .config/verdaccio/config.yaml &>$tmp_registry_log &"
 # wait for `verdaccio` to boot
 echo "Waiting for verdaccio to start"
 ( tail -f $tmp_registry_log & ) | grep -q "http address"
