@@ -1,0 +1,25 @@
+{
+  "name": "eslint-config-motley-dev",
+  "version": "1.0.0",
+  "description": "Development and testing tools for eslint-config-motley",
+  "main": "index.js",
+  "devDependencies": {
+    "npm-auth-to-token": "^1.0.0",
+    "verdaccio": "^5.1.3",
+    "verdaccio-auth-memory": "^10.0.0",
+    "verdaccio-memory": "^10.0.0"
+  },
+  "scripts": {
+    "test": "docker run -it eslint-config-motley-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/motleyagency/eslint-config-motley.git"
+  },
+  "author": "Pete Nykänen <pete@motley.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/motleyagency/eslint-config-motley/issues"
+  },
+  "homepage": "https://github.com/motleyagency/eslint-config-motley#readme"
+}
