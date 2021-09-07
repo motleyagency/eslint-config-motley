@@ -1,4 +1,4 @@
-name: Node.js CI
+name: E2E tests for eslint-config-motley and eslint-config-motley-typescript
 
 on:
   push:
