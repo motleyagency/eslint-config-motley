@@ -6,7 +6,6 @@ WORKDIR /app
 COPY .config ./.config
 COPY package-lock.json package.json ./
 RUN npm ci
-RUN npm install -g install-peerdeps
 COPY scripts ./scripts
 COPY packages ./packages
 

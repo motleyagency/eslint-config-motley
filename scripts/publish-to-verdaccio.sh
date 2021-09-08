@@ -29,7 +29,7 @@ echo "Installing eslint-config-motley to fixtures/js"
 (
   cd __fixtures__/js
   export PKG=eslint-config-motley;
-  install-peerdeps --dev "$PKG@latest" --extra-args="--registry $local_registry"
+  npm_config_yes=true npx install-peerdeps --dev "$PKG@latest" --extra-args="--registry $local_registry"
   npm install --registry https://registry.npmjs.org react react-dom
 )
 
@@ -37,7 +37,7 @@ echo "Installing eslint-config-motley-typescript to fixtures/ts"
 (
   cd __fixtures__/ts
   export PKG=eslint-config-motley-typescript
-  install-peerdeps --dev "$PKG@latest" --extra-args="--registry $local_registry"
+  npm_config_yes=true npx install-peerdeps --dev "$PKG@latest" --extra-args="--registry $local_registry"
   npm install --registry https://registry.npmjs.org react react-dom
 )
 
