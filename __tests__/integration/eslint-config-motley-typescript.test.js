@@ -23,16 +23,6 @@ describe('eslint-config-motley', () => {
     }
 
     expect(resultJSON[0].messages[0]).toMatchObject(noConsoleError);
-
-    const noUndefError = {
-      ruleId: 'no-undef',
-      severity: 2,
-      message: "'x' is not defined.",
-      line: 5,
-      column: 1 
-    }
-
-    expect(resultJSON[0].messages[1]).toMatchObject(noUndefError);
   });
 })
 

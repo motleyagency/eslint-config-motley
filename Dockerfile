@@ -4,9 +4,10 @@ FROM node:16-alpine3.11
 # Copy basic files
 WORKDIR /app
 COPY .config ./.config
-COPY scripts ./scripts
 COPY package-lock.json package.json ./
 RUN npm ci
+RUN npm install -g install-peerdeps
+COPY scripts ./scripts
 COPY packages ./packages
 COPY __tests__ ./__tests_
 COPY __fixtures__ ./__fixtures__
