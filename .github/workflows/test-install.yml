@@ -1,8 +1,6 @@
 name: E2E tests for eslint-config-motley and eslint-config-motley-typescript
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 

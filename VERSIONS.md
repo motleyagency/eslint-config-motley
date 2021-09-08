@@ -1,5 +1,10 @@
 # Versions
 
+## 14.1.0
+
+- Updated dependencies
+- Added tests and automatic publishing via GitHub Actions 🚀
+
 ## 14.0.0
 
 - Updated dependencies
