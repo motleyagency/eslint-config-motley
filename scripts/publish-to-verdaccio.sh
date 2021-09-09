@@ -16,10 +16,10 @@ cp .npmrc packages/eslint-config-motley-typescript/.npmrc
 
 # Run npm command
 echo "Publishing eslint-config-motley locally"
-cd packages/eslint-config-motley && sh -c "npm --registry $local_registry publish"
+cd packages/eslint-config-motley && sh -c "npm publish --registry $local_registry"
 
 echo "Publishing eslint-config-motley-typescript locally"
-cd ../eslint-config-motley-typescript && sh -c "npm --registry $local_registry publish"
+cd ../eslint-config-motley-typescript && sh -c "npm publish --registry $local_registry"
 cd ../../
 
 cp .npmrc __fixtures__/js/.npmrc
