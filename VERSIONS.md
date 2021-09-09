@@ -2,7 +2,7 @@
 
 ## 14.1.1
 
-- Added README-files for each of the packages via symlinks
+- Added README-files for each of the packages
 
 ## 14.1.0
 

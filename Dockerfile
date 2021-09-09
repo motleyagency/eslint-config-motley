@@ -15,7 +15,4 @@ RUN ./scripts/publish-to-verdaccio.sh
 
 COPY __tests__ ./__tests_
 
-RUN ["ls", "-al", "__fixtures__/js/node_modules/eslint-config-motley"]
-RUN ["ls", "-al", "__fixtures__/ts/node_modules/eslint-config-motley-typescript"]
-
 ENTRYPOINT ["npm", "test"]
