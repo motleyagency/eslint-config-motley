@@ -107,6 +107,17 @@ module.exports = {
 
 > **NOTE**: The TypeScript packages automatically uses `@typescript-eslint/parser`
 
+## Running tests
+
+Tests use `verdaccio` as a local repository and `jest` for testing. The tests itself can be found under
+`__tests__` and fixtures under `__fixtures__`. For local testing, you'll need Docker. Run the tests with
+
+```bash
+npm run test:local
+```
+
+The tests are also run in CI with GitHub Actions, as defined in `.github/workflows`.
+
 ## Acknowledgements
 
 We would like to thank the creators, maintainers and contributors of following libraries for making this possible:

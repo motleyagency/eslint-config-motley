@@ -1,0 +1,26 @@
+auth:
+  auth-memory:
+    users:
+      foo:
+        name: motley
+        password: motley
+store:
+  memory:
+    limit: 1000
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+    cache: false
+packages:
+  '**':
+    access: $all
+    publish: $all
+    proxy: npmjs
+  '*motley*':
+    access: $all
+    publish: $all
+middlewares:
+  audit:
+    enabled: true
+logs:
+ - {type: stdout, format: pretty, level: trace}
