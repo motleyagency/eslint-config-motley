@@ -4,7 +4,7 @@ FROM node:16-alpine3.11
 # Copy basic files
 WORKDIR /app
 COPY .config ./.config
-COPY package-lock.json package.json ./
+COPY package-lock.json package.json README.md ./
 RUN npm ci
 COPY scripts ./scripts
 COPY packages ./packages

@@ -1,11 +1,12 @@
 {
   "name": "eslint-config-motley",
-  "version": "14.1.0",
+  "version": "14.1.1",
   "description": "Motley's JavaScript styleguide using `eslint` and `prettier`",
   "main": ".eslintrc.js",
   "scripts": {
     "postinstall": "node lib/postinstall.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "cp ../../README.md README.md"
   },
   "repository": {
     "type": "git",
