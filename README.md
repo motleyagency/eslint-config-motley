@@ -81,7 +81,7 @@ and the following in your `package.json`:
     }
   },
   "lint-staged": {
-    "*.{js,json,graphql,md,css,scss,less,ts}": ["prettier --write", "git add"]
+    "*.{js,json,graphql,md,css,scss,less,ts,tsx}": ["prettier --write", "git add"]
   }
 }
 ```
