@@ -1,16 +1,11 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs/promises');
 const path = require('path');
-const { promisify } = require('util');
-
-const writeFileAsync = promisify(fs.writeFile);
-const readFileAsync = promisify(fs.readFile);
 
 // get the path to the host project.
 const projectPath = path.resolve(process.cwd(), '..', '..');
-const isTypeScript = fs.existsSync(path.resolve(process.cwd(), '..', 'eslint-config-motley-typescript'));
-console.log(`Configuring eslint-config-motley${isTypeScript ? '-typescript': ''}`, projectPath, '\n');
+console.log(`Configuring eslint-config-motley-typescript`, projectPath, '\n');
 
 /**
  * Updates package.json if there's no existing config. Warns if there is.
@@ -18,7 +13,7 @@ console.log(`Configuring eslint-config-motley${isTypeScript ? '-typescript': ''}
 const writeToPackageJson = async () => {
   const packageJsonPath = path.join(projectPath, 'package.json');
   
-  const content = await readFileAsync(packageJsonPath, 'utf-8').catch(err => {
+  const content = await fs.readFile(packageJsonPath, 'utf-8').catch(err => {
     console.log('🤔  package.json not found, have you run `npm init`?');
     return Promise.reject(err);
   });
@@ -58,7 +53,7 @@ ${JSON.stringify(lintStaged, null, 2)}\n`);
   // Stringify package.json and write to file
   const jsonString = JSON.stringify(packageJson, null, 2);
 
-  await writeFileAsync(packageJsonPath, jsonString, 'utf-8');
+  await fs.writeFile(packageJsonPath, jsonString, 'utf-8');
 };
 
 /**
@@ -67,13 +62,13 @@ ${JSON.stringify(lintStaged, null, 2)}\n`);
 const writeEslintRc = () => {
   const eslintPath = path.join(projectPath, '.eslintrc.js');
   const content = `module.exports = {
-  extends: ${isTypeScript ? "'motley-typescript'" : "'motley'"},
+  extends: "'motley-typescript'"
 };
 `;
 
   if (fs.existsSync(eslintPath)) {
     console.warn(`⚠️  .eslintrc.js already exists;
-Make sure that it includes the following for 'eslint-config-motley${isTypeScript ? '-typescript' : ''}'
+Make sure that it includes the following for 'eslint-config-motley-typescript'
 to work as it should:
 
 ${content}`);
@@ -81,7 +76,7 @@ ${content}`);
     return Promise.resolve();
   }
 
-  return writeFileAsync(eslintPath, content, 'utf-8');
+  return fs.writeFile(eslintPath, content, 'utf-8');
 };
 
 /**
@@ -96,7 +91,7 @@ const writePrettierRc = () => {
 
   if (fs.existsSync(prettierPath)) {
     console.warn(`⚠️  .prettierrc already exists;
-Make sure that it includes the following for  'eslint-config-motley${isTypeScript ? '-typescript' : ''}'
+Make sure that it includes the following for  'eslint-config-motley-typescript'
 to work as it should:
 
 ${JSON.stringify(content, null, 2)}\n`);
