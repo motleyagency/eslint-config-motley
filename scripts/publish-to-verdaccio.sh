@@ -18,7 +18,6 @@ echo "Publishing eslint-config-motley-typescript locally"
 cd ../eslint-config-motley-typescript && sh -c "npm publish --registry $local_registry"
 cd ../../
 
-cp .npmrc __fixtures__/js/.npmrc
 cp .npmrc __fixtures__/ts/.npmrc
 
 echo "Installing eslint-config-motley-typescript to fixtures/ts"

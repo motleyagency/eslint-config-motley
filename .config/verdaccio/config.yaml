@@ -12,9 +12,6 @@ uplinks:
     url: https://registry.npmjs.org/
     cache: false
 packages:
-  'eslint-config-motley':
-    access: $all
-    publish: $all
   'eslint-config-motley-typescript':
     access: $all
     publish: $all
