@@ -1,4 +1,4 @@
-name: E2E tests for eslint-config-motley and eslint-config-motley-typescript
+name: E2E tests for eslint-config-motley-typescript
 
 on:
   pull_request:
