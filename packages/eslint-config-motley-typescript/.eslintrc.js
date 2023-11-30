@@ -1,6 +1,12 @@
 module.exports = {
+  env: {
+    browser: true,
+    node: true,
+    jest: true,
+  },
   extends: [
-    'motley',
+    'airbnb',
+    'prettier',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
   ],
@@ -10,6 +16,10 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
+    'no-underscore-dangle': ['error', { 'allow': ['__DEV__'] }],
+    'curly': ['error', 'all'],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',    
     'react/jsx-filename-extension': [1, { 'extensions': ['.tsx'] }],
     'react/prop-types': 0,
     'import/extensions': [

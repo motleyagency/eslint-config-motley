@@ -1,9 +1,10 @@
 {
   "name": "eslint-config-motley-typescript",
-  "version": "14.1.1",
+  "version": "15.0.0",
   "description": "Motley's TypeScript styleguide using `@typescript-eslint` and `prettier`",
   "main": ".eslintrc.js",
   "scripts": {
+    "postinstall": "node lib/postinstall.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "cp ../../README.md README.md"
   },
