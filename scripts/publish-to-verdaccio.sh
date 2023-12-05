@@ -21,11 +21,13 @@ cd packages/eslint-config-motley-typescript && sh -c "npm publish --registry $lo
 cd ../../
 cp .config/verdaccio/.npmrc __fixtures__/ts/.npmrc
 
+npm info eslint-config-motley-typescript --registry $local_registry
+
 echo "Installing eslint-config-motley-typescript to fixtures/ts"
 (
   cd __fixtures__/ts
   export PKG=eslint-config-motley-typescript
-  npx install-peerdeps --dev "$PKG@latest" --extra-args="--registry $local_registry --maxsockets 1 --loglevel verbose"
+  npx install-peerdeps --dev "$PKG@latest" --extra-args="--registry $local_registry"
 )
 
 echo "Finished!"
