@@ -3,6 +3,12 @@
 const fs = require('fs/promises');
 const path = require('path');
 
+function checkFileExists(file) {
+  return fs.access(file, fs.constants.F_OK)
+           .then(() => true)
+           .catch(() => false)
+}
+
 // get the path to the host project.
 const projectPath = path.resolve(process.cwd(), '..', '..');
 console.log(`Configuring eslint-config-motley-typescript`, projectPath, '\n');
@@ -59,14 +65,14 @@ ${JSON.stringify(lintStaged, null, 2)}\n`);
 /**
  * Writes .eslintrc.js if it doesn't exist. Warns if it exists.
  */
-const writeEslintRc = () => {
+const writeEslintRc = async () => {
   const eslintPath = path.join(projectPath, '.eslintrc.js');
   const content = `module.exports = {
   extends: "'motley-typescript'"
 };
 `;
 
-  if (fs.existsSync(eslintPath)) {
+  if (await checkFileExists(eslintPath)) {
     console.warn(`⚠️  .eslintrc.js already exists;
 Make sure that it includes the following for 'eslint-config-motley-typescript'
 to work as it should:
@@ -82,14 +88,14 @@ ${content}`);
 /**
  * Writes .prettierrc if it doesn't exist. Warns if it exists.
  */
-const writePrettierRc = () => {
+const writePrettierRc = async () => {
   const prettierPath = path.join(projectPath, '.prettierrc');
   const content = {
     singleQuote: true,
     trailingComma: 'all',
   };
 
-  if (fs.existsSync(prettierPath)) {
+  if (await checkFileExists(prettierPath)) {
     console.warn(`⚠️  .prettierrc already exists;
 Make sure that it includes the following for  'eslint-config-motley-typescript'
 to work as it should:
