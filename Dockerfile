@@ -1,5 +1,5 @@
 # Ensure that the packages work via Verdaccio
-FROM node:16-alpine3.11
+FROM node:18-alpine3.17
 
 # Copy basic files
 WORKDIR /app
