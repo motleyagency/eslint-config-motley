@@ -25,7 +25,7 @@ echo "Installing eslint-config-motley-typescript to fixtures/ts"
 (
   cd __fixtures__/ts
   export PKG=eslint-config-motley-typescript
-  npx install-peerdeps --dev "$PKG@latest" --extra-args="--registry $local_registry --maxsockets 1"
+  npx install-peerdeps --dev "$PKG@latest" --extra-args="--registry $local_registry --maxsockets 1 --loglevel verbose"
 )
 
 echo "Finished!"

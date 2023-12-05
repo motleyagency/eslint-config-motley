@@ -1,4 +1,4 @@
-name: Publish eslint-config-motley and eslint-config-motley-typescript
+name: Publish eslint-config-motley-typescript
 
 on:
   push:
