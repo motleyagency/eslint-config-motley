@@ -26,7 +26,8 @@ echo "Installing eslint-config-motley-typescript to fixtures/ts"
 (
   cd __fixtures__/ts
   export PKG=eslint-config-motley-typescript
-  npx install-peerdeps $PKG --registry $local_registry
+  npx install-peerdeps --only-peers $PKG --registry $local_registry
+  npm install $PKG --registry $local_registry
 )
 
 echo "Finished!"
