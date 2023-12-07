@@ -28,6 +28,7 @@ cd __fixtures__/ts
 export PKG=eslint-config-motley-typescript
 npx install-peerdeps --only-peers $PKG --registry $local_registry
 npm install $PKG --registry $local_registry
+npm install react react-dom
 
 echo "Check if everything was installed..."
 ls -al

@@ -68,7 +68,7 @@ ${JSON.stringify(lintStaged, null, 2)}\n`);
 const writeEslintRc = async () => {
   const eslintPath = path.join(projectPath, '.eslintrc.js');
   const content = `module.exports = {
-  extends: "'motley-typescript'"
+  extends: "motley-typescript"
 };
 `;
 

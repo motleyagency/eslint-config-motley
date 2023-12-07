@@ -4,7 +4,7 @@ const fs = require('fs/promises')
 const { ESLint } = require("../../__fixtures__/ts/node_modules/eslint");
 const projectPath = path.resolve(process.cwd(), '__fixtures__', 'ts');
 
-describe('eslint-config-motley', () => {
+describe('eslint-config-motley-typescript', () => {
   let resultJSON;
   beforeAll(async () => {
     const eslint = new ESLint({
