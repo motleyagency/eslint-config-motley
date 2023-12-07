@@ -105,7 +105,7 @@ ${JSON.stringify(content, null, 2)}\n`);
     return Promise.resolve();
   }
 
-  return writeFileAsync(
+  return fs.writeFile(
     prettierPath,
     `${JSON.stringify(content, null, 2)}\n`,
     'utf-8',
