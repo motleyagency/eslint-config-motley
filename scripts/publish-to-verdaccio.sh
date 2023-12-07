@@ -2,7 +2,6 @@
 
 set -e
 local_registry="http://localhost:4873"
-npm set registry $local_registry
 
 # start local registry
 sh -c "./node_modules/.bin/verdaccio --config .config/verdaccio/config.yaml --listen $local_registry &"
@@ -27,7 +26,7 @@ echo "Installing eslint-config-motley-typescript to fixtures/ts"
 (
   cd __fixtures__/ts
   export PKG=eslint-config-motley-typescript
-  npx install-peerdeps --only-peers --dev "$PKG@latest" --extra-args="--registry $local_registry --maxsockets 1 --loglevel verbose"
+  npx install-peerdeps $PKG --registry $local_registry
 )
 
 echo "Finished!"
