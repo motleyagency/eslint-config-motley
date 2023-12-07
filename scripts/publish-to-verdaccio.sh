@@ -23,12 +23,13 @@ cp .config/verdaccio/.npmrc __fixtures__/ts/.npmrc
 npm info eslint-config-motley-typescript --registry $local_registry
 
 echo "Installing eslint-config-motley-typescript to fixtures/ts"
-(
-  cd __fixtures__/ts
-  export PKG=eslint-config-motley-typescript
-  npx install-peerdeps --only-peers $PKG --registry $local_registry
-  npm install $PKG --registry $local_registry
-  ls -al
-)
+
+cd __fixtures__/ts
+export PKG=eslint-config-motley-typescript
+npx install-peerdeps --only-peers $PKG --registry $local_registry
+npm install $PKG --registry $local_registry
+
+echo "Check if everything was installed..."
+ls -al
 
 echo "Finished!"
