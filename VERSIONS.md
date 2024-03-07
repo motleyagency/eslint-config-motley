@@ -1,5 +1,10 @@
 # Versions
 
+## 15.0.0
+
+- *BREAKING* only shipping the `typescript` package from now on. If you want to use the old plain JavaScript version, install `eslint-config-motley@14.1.1`
+- Updated dependencies
+
 ## 14.1.1
 
 - Added README-files for each of the packages

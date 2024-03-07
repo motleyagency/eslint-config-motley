@@ -1,20 +1,12 @@
-auth:
-  auth-memory:
-    users:
-      foo:
-        name: motley
-        password: motley
 store:
   memory:
-    limit: 1000
+    limit: 100000
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
     cache: false
+    max_fails: 100
 packages:
-  'eslint-config-motley':
-    access: $all
-    publish: $all
   'eslint-config-motley-typescript':
     access: $all
     publish: $all
@@ -22,8 +14,5 @@ packages:
     access: $all
     publish: $all
     proxy: npmjs
-middlewares:
-  audit:
-    enabled: true
-logs:
- - {type: stdout, format: pretty, level: trace}
+log: { type: stdout, format: pretty, level: http }
+
